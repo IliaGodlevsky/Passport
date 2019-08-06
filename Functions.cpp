@@ -11,7 +11,8 @@ Visa rand_visa()
 Document rand_doc()
 {
 	Visas visas(VISAS);
-	generate(visas.begin(), visas.end(), rand_visa);
+	std::generate(visas.begin(), 
+		visas.end(), rand_visa);
 	String name = names[idx(NAMES)];
 	String surname = surnames[idx(NAMES)];
 	if (idx(DOCS) == FOREIGN)

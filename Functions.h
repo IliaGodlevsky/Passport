@@ -7,8 +7,6 @@
 #include "Passport.h"
 #include "Constants.h"
 
-using std::generate;
-
 using Document = std::unique_ptr<Passport>;
 using Office = std::vector<Document>;
 
