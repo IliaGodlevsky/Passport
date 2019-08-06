@@ -13,8 +13,10 @@ class Visa
 {
 public:
 	Visa() {}
-	Visa(const String& country, int term, char type) :
-		country(country), term(term), type(type) {}
+	Visa(const String& country, 
+		int term, char type) :
+		country(country), 
+		term(term), type(type) {}
 	void show()const;
 private:
 	String country;
@@ -26,7 +28,8 @@ class Passport
 {
 public:
 	Passport() = delete;
-	Passport(const String& fname, const String& lname, long id) :
+	Passport(const String& fname, 
+		const String& lname, long id) :
 		fname(fname), lname(lname), id(id) {}
 	virtual void show()const;
 	virtual void holder()const;
@@ -41,7 +44,8 @@ class ForeignPassport : public Passport
 {
 public:
 	ForeignPassport() = delete;
-	ForeignPassport(const String& fname, const String& lname,
+	ForeignPassport(const String& fname, 
+		const String& lname,
 		long id, long number, Visas& visas) :
 		Passport(fname, lname, id),
 		number(number), visas(visas) {}
