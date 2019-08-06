@@ -2,7 +2,7 @@
 
 Visa rand_visa()
 {
-	String state = country[idx(STATES)];
+	String state = states[idx(STATES)];
 	int term = terms[idx(TERMS)];
 	char type = types[idx(TYPES)];
 	return Visa(state, term, type);
@@ -11,8 +11,7 @@ Visa rand_visa()
 Document rand_doc()
 {
 	Visas visas(VISAS);
-	generate(visas.begin(), 
-		visas.end(), rand_visa);
+	generate(visas.begin(), visas.end(), rand_visa);
 	String name = names[idx(NAMES)];
 	String surname = surnames[idx(NAMES)];
 	if (idx(DOCS) == FOREIGN)
@@ -27,9 +26,7 @@ void show_office(const Office& office)
 {
 	for (auto& doc : office)
 	{
-		doc->holder();
-		doc->show();
-		system("pause");
-		system("cls");
+		doc->holder(); doc->show();
+		system("pause"); system("cls");
 	}
 }

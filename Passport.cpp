@@ -27,16 +27,7 @@ void ForeignPassport::show()const
 	Passport::show();
 	std::cout << "Foreign number: " << number << std::endl;
 	std::cout << "Visas\n";
-	show_visas();
-}
-
-void ForeignPassport::show_visas()const
-{
-	for (size_t i = 0; i < visas.size(); i++)
-	{
-		std::cout << i + 1 << ". ";
-		visas[i].show();
-	}
+	for (auto& visa : visas) visa.show();
 }
 
 void ForeignPassport::holder()const
