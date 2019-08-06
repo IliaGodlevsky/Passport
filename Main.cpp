@@ -1,28 +1,16 @@
 #include <ctime>
-#include <vector>
 #include <algorithm>
-#include <iostream>
 
 #include "Passport.h"
-#include "Visa.h"
-#include "ForeignPassport.h"
+#include "Functions.h"
 #include "Constants.h"
-
-const int PEOPLE = 8;
-using Buro = std::vector<Passport*>;
 
 int main()
 {
-	using std::generate;
-	srand(unsigned(time(nullptr)));
+	srand(unsigned(time(NULL)));
 	Buro docs(PEOPLE);
-	generate(docs.begin(), docs.end(), rand_doc);
-	for (size_t i = 0; i < PEOPLE; i++)
-	{
-		docs[i]->holder();
-		docs[i]->show();
-		system("pause");
-		system("cls");
-	}
+	std::generate(docs.begin(), 
+		docs.end(), rand_doc);
+	show_docs(docs);
 	for (auto doc : docs) delete doc;
 }

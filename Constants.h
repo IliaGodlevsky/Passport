@@ -1,16 +1,17 @@
 #ifndef CONST_H_
 #define CONST_H_
 
-#include <string>
+enum { FOREIGN };
+// constants for array sizes
+enum sizes { VISAS = 4, STATES = 8,TERMS = 5, 
+	TYPES = 5, NAMES = 10, DOCS = 2, PEOPLE = 14 };
 
-const long BASE_ID = 859603950L;
-const int COUNTRIES = 5;
-
-static const std::string country[COUNTRIES]={
-	"Russia","Poland","USA","Canada","Great Britain"
-};
-static const int terms[COUNTRIES] = { 90,14,180,30,60 };
-static const char types[COUNTRIES] = { 'C','D','A','L','H' };
-const std::string names[COUNTRIES] = { "John","Alex", "Dima","Donald","Jessica" };
-const std::string surnames[COUNTRIES] = { "Smith","Gold","Gates","Obama","Trump" };
+static const int terms[TERMS] = { 90,14,180,30,60 };
+static const char* country[STATES] = { "Russia","Poland",
+"USA","Canada","Great Britain","France","Germany","Italy"};
+static const char types[TYPES] = { 'C','D','A','L','H' };
+static const char* names[NAMES] = { "John","Alex", "Dima",
+"Donald","Jessica","Sara","Bella","Tom","Gregor","James" };
+static const char* surnames[NAMES] = { "Smith","Gold","Gates",
+"Obama","Trump","White","Black","Green","Bush","Summers" };
 #endif
