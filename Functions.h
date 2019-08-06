@@ -16,8 +16,7 @@ Visa rand_visa();
 // generates random Passport or ForeignPassport
 Document rand_doc();
 
-void show_office(const Office& office,
-	std::ostream& os);
+void show_office(const Office& office, ostream& os);
 
 // random id
 inline long rand_id() { return (rand() + 1) * RAND_MAX; }

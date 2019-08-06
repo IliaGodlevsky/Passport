@@ -3,26 +3,26 @@
 #include "Passport.h"
 #include "Constants.h"
 
-void Visa::show(std::ostream& os)const
+void Visa::show(ostream& os)const
 {
 	os << "Type: " << type << std::endl;
 	os << "Country: " << country << std::endl;
 	os << "Term: " << term << " days" << std::endl;
 }
 
-void Passport::show(std::ostream& os)const
+void Passport::show(ostream& os)const
 {
 	os << "Name: " << fname << std::endl;
 	os << "Surname: " << lname << std::endl;
 	os << "Id: " << id << std::endl;
 }
 
-void Passport::holder(std::ostream& os)const
+void Passport::holder(ostream& os)const
 {
 	os << "Passport holder\n";
 }
 
-void ForeignPassport::show(std::ostream& os)const
+void ForeignPassport::show(ostream& os)const
 {
 	Passport::show(os);
 	os << "Foreign number: " << number << std::endl;
@@ -30,7 +30,7 @@ void ForeignPassport::show(std::ostream& os)const
 	for (auto& visa : visas) visa.show(os);
 }
 
-void ForeignPassport::holder(std::ostream& os)const
+void ForeignPassport::holder(ostream& os)const
 {
 	os << "Foreign passport holder\n";
 }

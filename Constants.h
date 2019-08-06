@@ -6,7 +6,7 @@ enum { FOREIGN };
 // constants for array sizes
 enum sizes {
 	VISAS = 2, STATES = 8, TERMS = 7, TYPES = 5, 
-	NAMES = 10, DOCS = 2, PEOPLE = 12
+	NAMES = 10, DOCS = 2, PEOPLE = 10
 };
 
 static const int terms[TERMS] = { 90,14,180,30,60,360,720 };

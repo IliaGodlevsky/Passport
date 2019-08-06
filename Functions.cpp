@@ -23,8 +23,7 @@ Document rand_doc()
 			surname, rand_id()));
 }
 
-void show_office(const Office& office,
-	std::ostream& os)
+void show_office(const Office& office, ostream& os)
 {
 	for (auto& doc : office)
 	{
