@@ -42,9 +42,6 @@ private:
 	String fname;
 	String lname;
 	long id;
-	void show_name() const;
-	void show_surname()const;
-	void show_id()const;
 };
 
 using Document = std::unique_ptr<Passport>;
@@ -70,7 +67,6 @@ public:
 private:
 	long number;
 	Visas visas;
-	void show_number()const;
 	void show_visas()const;
 };
 #endif

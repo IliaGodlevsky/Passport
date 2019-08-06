@@ -10,26 +10,11 @@ void Visa::show()const
 	std::cout << "Term: " << term << " days" << std::endl;
 }
 
-void Passport::show_name() const
-{
-	std::cout << "Name: " << fname << std::endl;
-}
-
-void Passport::show_surname()const
-{
-	std::cout << "Surname: " << lname << std::endl;
-}
-
-void Passport::show_id()const
-{
-	std::cout << "Id: " << id << std::endl;
-}
-
 void Passport::show()const
 {
-	show_name();
-	show_surname();
-	show_id();
+	std::cout << "Name: " << fname << std::endl;
+	std::cout << "Surname: " << lname << std::endl;
+	std::cout << "Id: " << id << std::endl;
 }
 
 void Passport::holder()const
@@ -40,14 +25,9 @@ void Passport::holder()const
 void ForeignPassport::show()const
 {
 	Passport::show();
-	show_number();
+	std::cout << "Foreign number: " << number << std::endl;
 	std::cout << "Visas\n";
 	show_visas();
-}
-
-void ForeignPassport::show_number()const
-{
-	std::cout << "Foreign number: " << number << std::endl;
 }
 
 void ForeignPassport::show_visas()const
