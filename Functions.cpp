@@ -23,11 +23,13 @@ Document rand_doc()
 			surname, rand_id()));
 }
 
-void show_office(const Office& office)
+void show_office(const Office& office,
+	std::ostream& os)
 {
 	for (auto& doc : office)
 	{
-		doc->holder(); doc->show();
-		system("pause"); system("cls");
+		doc->holder(os); 
+		doc->show(os);
+		os << std::endl;
 	}
 }

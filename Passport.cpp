@@ -3,34 +3,34 @@
 #include "Passport.h"
 #include "Constants.h"
 
-void Visa::show()const
+void Visa::show(std::ostream& os)const
 {
-	std::cout << "Type: " << type << std::endl;
-	std::cout << "Country: " << country << std::endl;
-	std::cout << "Term: " << term << " days" << std::endl;
+	os << "Type: " << type << std::endl;
+	os << "Country: " << country << std::endl;
+	os << "Term: " << term << " days" << std::endl;
 }
 
-void Passport::show()const
+void Passport::show(std::ostream& os)const
 {
-	std::cout << "Name: " << fname << std::endl;
-	std::cout << "Surname: " << lname << std::endl;
-	std::cout << "Id: " << id << std::endl;
+	os << "Name: " << fname << std::endl;
+	os << "Surname: " << lname << std::endl;
+	os << "Id: " << id << std::endl;
 }
 
-void Passport::holder()const
+void Passport::holder(std::ostream& os)const
 {
-	std::cout << "Passport holder\n";
+	os << "Passport holder\n";
 }
 
-void ForeignPassport::show()const
+void ForeignPassport::show(std::ostream& os)const
 {
-	Passport::show();
-	std::cout << "Foreign number: " << number << std::endl;
-	std::cout << "Visas\n";
-	for (auto& visa : visas) visa.show();
+	Passport::show(os);
+	os << "Foreign number: " << number << std::endl;
+	os << "Visas\n";
+	for (auto& visa : visas) visa.show(os);
 }
 
-void ForeignPassport::holder()const
+void ForeignPassport::holder(std::ostream& os)const
 {
-	std::cout << "Foreign passport holder\n";
+	os << "Foreign passport holder\n";
 }

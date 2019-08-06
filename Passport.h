@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 class Visa;
 
@@ -17,7 +18,7 @@ public:
 		int term, char type) :
 		country(country), 
 		term(term), type(type) {}
-	void show()const;
+	void show(std::ostream& os)const;
 private:
 	String country;
 	char type;
@@ -31,8 +32,8 @@ public:
 	Passport(const String& fname, 
 		const String& lname, long id) :
 		fname(fname), lname(lname), id(id) {}
-	virtual void show()const;
-	virtual void holder()const;
+	virtual void show(std::ostream& os)const;
+	virtual void holder(std::ostream& os)const;
 	virtual ~Passport() {};
 private:
 	String fname;
@@ -50,8 +51,8 @@ public:
 		Passport(fname, lname, id),
 		number(number), visas(visas) {}
 	~ForeignPassport() {}
-	void show()const override;
-	void holder()const override;
+	void show(std::ostream& os)const override;
+	void holder(std::ostream& os)const override;
 private:
 	long number;
 	Visas visas;

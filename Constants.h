@@ -5,11 +5,13 @@ enum { FOREIGN };
 
 // constants for array sizes
 enum sizes {
-	VISAS = 3, STATES = 8, TERMS = 7, TYPES = 5, 
-	NAMES = 10, DOCS = 2, PEOPLE = 15 
+	VISAS = 2, STATES = 8, TERMS = 7, TYPES = 5, 
+	NAMES = 10, DOCS = 2, PEOPLE = 12
 };
 
 static const int terms[TERMS] = { 90,14,180,30,60,360,720 };
+
+static const char* filename = "Schedule.txt";
 
 static const char* states[STATES] = { "Russia","Poland",
 "USA","Canada","Great Britain","France","Germany","Italy"};
