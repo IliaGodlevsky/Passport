@@ -1,16 +1,24 @@
 #ifndef FUNCT_H_
 #define FUNCT_H_
 
+#include <algorithm>
+
 #include "Passport.h"
 #include "Constants.h"
 
-Visa rand_visa();
-Passport* rand_doc();
+using std::generate;
 
-void show_docs(const Buro& buro);
+// generates random Visa
+Visa rand_visa();
+
+// generates random Passport or ForeignPassport
+Document rand_doc();
+
+void show_office(const Office& office);
 
 // random id
 inline long rand_id() { return (rand() + 1) * RAND_MAX; }
+
 // random index
 inline int idx(int size) { return rand() % size; }
 

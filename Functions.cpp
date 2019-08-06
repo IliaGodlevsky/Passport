@@ -1,35 +1,31 @@
-#include <algorithm>
-
 #include "Functions.h"
-
-Passport* rand_doc()
-{
-	Visas visas(VISAS);
-	std::generate(visas.begin(), 
-		visas.end(), rand_visa);
-	std::string name = names[idx(NAMES)];
-	std::string surname = surnames[idx(NAMES)];
-	long id = rand_id();
-	long num = rand_id();
-	int doc = idx(DOCS);
-	if (doc == FOREIGN)
-		return new ForeignPassport(name, 
-			surname, id, num, visas);
-	else
-		return new Passport(name, surname, id);
-}
 
 Visa rand_visa()
 {
-	std::string state = country[idx(STATES)];
+	String state = country[idx(STATES)];
 	int term = terms[idx(TERMS)];
 	char type = types[idx(TYPES)];
 	return Visa(state, term, type);
 }
 
-void show_docs(const Buro& buro)
+Document rand_doc()
 {
-	for (auto doc: buro)
+	Visas visas(VISAS);
+	generate(visas.begin(), 
+		visas.end(), rand_visa);
+	String name = names[idx(NAMES)];
+	String surname = surnames[idx(NAMES)];
+	if (idx(DOCS) == FOREIGN)
+		return Document(new ForeignPassport(name, 
+			surname, rand_id(), rand_id(), visas));
+	else
+		return Document(new Passport(name, 
+			surname, rand_id()));
+}
+
+void show_office(const Office& office)
+{
+	for (auto& doc : office)
 	{
 		doc->holder();
 		doc->show();

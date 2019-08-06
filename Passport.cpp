@@ -52,10 +52,10 @@ void ForeignPassport::show_number()const
 
 void ForeignPassport::show_visas()const
 {
-	for (auto i = visas.begin(); i != visas.end(); i++)
+	for (size_t i = 0; i < visas.size(); i++)
 	{
-		std::cout << i - visas.begin() + 1 << ". ";
-		i->show();
+		std::cout << i + 1 << ". ";
+		visas[i].show();
 	}
 }
 

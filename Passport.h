@@ -1,13 +1,17 @@
 #ifndef PASS_H_
 #define PASS_H_
+
 #include <string>
 #include <vector>
+#include <memory>
+
+using String = std::string;
 
 class Visa
 {
 public:
 	Visa() {}
-	Visa(const std::string& country,
+	Visa(const String& country,
 		 int term,
 		 char type) :
 		 country(country),
@@ -16,7 +20,7 @@ public:
 	void show()const;
 	~Visa() {}
 private:
-	std::string country;
+	String country;
 	char type;
 	int term; // days
 };
@@ -25,8 +29,8 @@ class Passport
 {
 public:
 	Passport() = delete;
-	Passport(const std::string& fname,
-			 const std::string& lname,
+	Passport(const String& fname,
+			 const String& lname,
 			 long id):
 			 fname(fname), 
 			 lname(lname), 
@@ -35,23 +39,25 @@ public:
 	virtual void holder()const;
 	virtual ~Passport() {};
 private:
-	std::string fname;
-	std::string lname;
+	String fname;
+	String lname;
 	long id;
 	void show_name() const;
 	void show_surname()const;
 	void show_id()const;
 };
 
-using Buro = std::vector<Passport*>;
+using Document = std::unique_ptr<Passport>;
+using Office = std::vector<Document>;
 using Visas = std::vector<Visa>;
 
-class ForeignPassport : public Passport
+class ForeignPassport 
+		:public Passport
 {
 public:
 	ForeignPassport() = delete;
-	ForeignPassport(const std::string& fname,
-					const std::string& lname,
+	ForeignPassport(const String& fname,
+					const String& lname,
 					long id,
 					long number,
 					Visas& visas) :
