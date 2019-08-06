@@ -24,3 +24,8 @@ void Passport::show()const
 	show_surname();
 	show_id();
 }
+
+void Passport::holder()const
+{
+	std::cout << "Passport holder\n";
+}

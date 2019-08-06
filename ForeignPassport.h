@@ -5,6 +5,7 @@
 
 #include "Passport.h"
 #include "Visa.h"
+#include "Constants.h"
 
 class ForeignPassport : public Passport
 {
@@ -20,12 +21,18 @@ public:
 					visas(visas) {}
 	~ForeignPassport() {}
 	void show()const;
+	void holder()const;
 private:
 	long number;
 	std::vector<Visa>visas;
 	void show_number()const;
 	void show_visas()const;
-	void msg()const;
+	
 };
 
+
+inline long rand_id(long base) { return rand() * 143 + base; }
+inline int rand_index() { return rand() % COUNTRIES; }
+
+Passport* rand_doc();
 #endif

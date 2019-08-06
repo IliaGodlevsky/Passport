@@ -8,29 +8,21 @@
 #include "ForeignPassport.h"
 #include "Constants.h"
 
-const int VISAS = 4;
-int index() { return rand() % COUNTRIES; }
+const int PEOPLE = 8;
+using Buro = std::vector<Passport*>;
 
 int main()
 {
+	using std::generate;
 	srand(unsigned(time(nullptr)));
-	long id, number;
-	std::string name, surname;
-	std::vector<Visa>visas(VISAS);
-	std::generate(visas.begin(), visas.end(), visa_gen);
-	Passport* doc = nullptr;
-	id = rand() + 1234567;
-	name = names[index()];
-	surname = surnames[index()];
-	Passport passport(name, surname, id);
-	id = rand() + 1234567;
-	name = names[index()];
-	surname = surnames[index()];
-	number = rand() + 1234567;
-	ForeignPassport foreign(name, surname, id, number, visas);
-	doc = &passport;
-	doc->show();
-	doc = &foreign;
-	doc->show();
-	system("pause");
+	Buro docs(PEOPLE);
+	generate(docs.begin(), docs.end(), rand_doc);
+	for (size_t i = 0; i < PEOPLE; i++)
+	{
+		docs[i]->holder();
+		docs[i]->show();
+		system("pause");
+		system("cls");
+	}
+	for (auto doc : docs) delete doc;
 }
