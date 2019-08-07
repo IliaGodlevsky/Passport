@@ -14,7 +14,7 @@ int main()
 	std::generate(office.begin(), 
 		office.end(), rand_doc);
 	show_office(office, cout);
-	system("pause");
 	show_office(office, fout);
 	fout.close();
+	system("pause");
 }
