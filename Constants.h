@@ -9,19 +9,19 @@ enum sizes {
 	NAMES = 10, DOCS = 2, PEOPLE = 10
 };
 
-static const int terms[TERMS] = { 7,14,30,60,90,180,360,720 };
+const int terms[TERMS] = { 7,14,30,60,90,180,360,720 };
 
-static const char* filename = "Schedule.txt";
+const char* const filename = "Schedule.txt";
 
-static const char* states[STATES] = { "Russia","Poland",
+const char* const states[STATES] = { "Russia","Poland",
 "USA","Canada","Great Britain","France","Germany","Italy"};
 
-static const char types[TYPES] = { 'C','D','A','L','H' };
+const char types[TYPES] = { 'C','D','A','L','H' };
 
-static const char* names[NAMES] = { "John","Alex", "Dima",
+const char* const names[NAMES] = { "John","Alex", "Dima",
 "Donald","Jessica","Sara","Bella","Tom","Gregor","James" };
 
-static const char* surnames[NAMES] = { "Smith","Gold","Gates",
+const char* const surnames[NAMES] = { "Smith","Gold","Gates",
 "Obama","Trump","White","Black","Green","Bush","Summers" };
 
 #endif
