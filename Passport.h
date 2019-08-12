@@ -4,10 +4,12 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <fstream>
 
 class Visa;
 
-using std::ostream;
+using Output = std::ostream;
+using Infile = std::ofstream;
 using String = std::string;
 using Visas = std::vector<Visa>;
 
@@ -19,7 +21,7 @@ public:
 		int term, char type) :
 		country(country), 
 		term(term), type(type) {}
-	void show(ostream& os)const;
+	void show(Output& os)const;
 private:
 	String country;
 	char type;
@@ -33,8 +35,8 @@ public:
 	Passport(const String& fname, 
 		const String& lname, long id) :
 		fname(fname), lname(lname), id(id) {}
-	virtual void show(ostream& os)const;
-	virtual void holder(ostream& os)const;
+	virtual void show(Output& os)const;
+	virtual void holder(Output& os)const;
 	virtual ~Passport() {};
 private:
 	String fname;
@@ -52,8 +54,8 @@ public:
 		Passport(fname, lname, id),
 		number(number), visas(visas) {}
 	~ForeignPassport() {}
-	void show(ostream& os)const override;
-	void holder(ostream& os)const override;
+	void show(Output& os)const override;
+	void holder(Output& os)const override;
 private:
 	long number;
 	Visas visas;
