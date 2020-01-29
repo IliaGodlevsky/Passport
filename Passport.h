@@ -16,7 +16,7 @@ using Visas = std::vector<Visa>;
 class Visa
 {
 public:
-	Visa() {}
+	Visa() = default;
 	Visa(const String& country, 
 		int term, char type) :
 		country(country), 
